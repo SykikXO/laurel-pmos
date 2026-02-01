@@ -79,3 +79,28 @@ Default password: `147147`
 - **Kernel**: 6.1.0-sm6125 (mainline)
 - **Built**: February 2026
 - **Architecture**: aarch64
+
+## Photos of Device
+
+<div align="center">
+
+### Booting postmarketOS
+<img src="../pictures/photo-boot-splash.jpg" width="400" alt="Photo of Xiaomi Mi A3 showing the Android One boot splash screen">
+
+*The initial boot splash screen on the Xiaomi Mi A3.*
+
+<br>
+
+### Loading System
+<img src="../pictures/photo-pmos-loading.jpg" width="400" alt="Photo of Xiaomi Mi A3 showing the postmarketOS loading screen">
+
+*The postmarketOS loading screen as the system starts up.*
+
+<br>
+
+### Fastfetch Overview
+<img src="../pictures/photo-fastfetch.jpg" width="400" alt="Photo showing fastfetch output on the device screen">
+
+*System overview provided by fastfetch, showing kernel 6.1.0-sm6125 on the Mi A3 screen.*
+
+</div>
