@@ -1,57 +1,32 @@
 # Hardware Bringup Guide for Xiaomi Mi A3
 
-## Overview
-This guide provides detailed instructions for the hardware bringup of the Xiaomi Mi A3 using the LineageOS build system. It includes information about the device specifications, requirements for building, and instructions for similar devices.
+## Hardware Requirements
+- Xiaomi Mi A3 device
+- USB Type-C cable
+- Computer with Linux/MacOS/Windows
 
-## Device Specifications
-- **Device Name**: Xiaomi Mi A3  
-- **Model Number**: M1906F9SH  
-- **Chipset**: Qualcomm Snapdragon 665  
-- **RAM**: 4GB/6GB  
-- **Storage**: 64GB/128GB
+## Preparation Steps
+1. **Install Necessary Drivers:** Ensure that the necessary USB drivers are installed on your computer.
+2. **Unlock Bootloader:** Unlock the bootloader of your Xiaomi Mi A3 if not already done.
+3. **Download Required Tools:** Download the Android SDK and ADB tools for flashing and debugging.
 
-## Prerequisites
-Before starting the bringup, ensure you have the following software installed:
-- Ubuntu 18.04 or later
-- Git
-- Repo tools
-- Java JDK 8 or newer
-
-## Setting Up the Build Environment
-1. Install necessary packages:
+## Bringup Steps
+1. **Connect the Device:** Use the USB Type-C cable to connect your Xiaomi Mi A3 to the computer.
+2. **Boot into Fastboot Mode:** Turn off the device and hold `Volume Down` + `Power` to enter Fastboot Mode.
+3. **Execute Flash Commands:** Use the following commands in your terminal/command prompt:
    ```bash
-   sudo apt-get install openjdk-8-jdk git-core gnupg flex bison zip curl zlib1g-dev \
-   gcc-multilib git wget unzip
+   fastboot flash recovery <recovery_image.img>
+   fastboot reboot
    ```
-2. Create a new directory for the source code and initialize repo:
-   ```bash
-   mkdir ~/laurel-pmos \
-   cd ~/laurel-pmos \
-   repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
-   ```
-
-## Building LineageOS for Xiaomi Mi A3
-1. Sync the source code:
-   ```bash
-   repo sync
-   ```
-2. Set up environment variables:
-   ```bash
-   source build/envsetup.sh
-   lunch lineage_lauren-userdebug
-   ```
-3. Start the build:
-   ```bash
-   make bacon
-   ```
-
-## Similar Devices
-- Xiaomi Mi A2 (Model: M1804D2SG)
-- Android One Devices with Snapdragon 665
+4. **Verify Setup:** After the device reboots, verify that the recovery is functional by accessing it via `Volume Up` + `Power`.
 
 ## Troubleshooting
-- Ensure that your kernel is configured correctly for the specified hardware.
-- Check log files for errors during build and bringup.
+- Ensure that the device drivers are properly installed.
+- Check the USB cable for faults if the device isn’t recognized.
 
-## Conclusion
-Following this guide should assist in the successful hardware bringup of the Xiaomi Mi A3 with LineageOS. For further questions, refer to the LineageOS forums or device-specific threads.
+## Useful Links
+- [Xiaomi Mi A3 Forum](https://forum.xda-developers.com/) 
+- [ADB and Fastboot guide](https://developer.android.com/studio/command/adb)
+
+---
+*Document last updated on 2026-02-02*
